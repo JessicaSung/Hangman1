@@ -1,0 +1,7 @@
+body {
+	background-image: url("../images/hangman.png");
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 55% 90%;
+    background-position: right bottom;
+}
