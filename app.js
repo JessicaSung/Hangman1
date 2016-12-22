@@ -1,9 +1,9 @@
 // VARIABLES
 // ===============================================
 // chosenWord is the word the user is trying to guess
-// display is the current progress of user guess
+// currentProgress shows the word as the user guess with unguessed letters as _
 // allGuesses are all the unique letters the user has guessed
-var display = [];
+var currentProgress = [];
 var allGuesses = [];
 	
 // create array with possible word choices
@@ -12,13 +12,13 @@ var possibleWords = ['coding', 'html', 'running'];
 var chosenWord = possibleWords[Math.floor(Math.random()*possibleWords.length)];
 console.log(chosenWord);
 
-// display _ equal to the number of letters in the chosen word
+// currentProgress _ equal to the number of letters in the chosen word
 for (var i = 0; i < chosenWord.length; i++) {
-	chosenWord[i] = display.push("_ ");
+	chosenWord[i] = currentProgress.push("_ ");
 }
-console.log(display);
+console.log(currentProgress);
 // append _ word to the page
-$('#word').append(display);
+$('#word').append(currentProgress);
 
 // log user input
 $(document).keydown(function(event) {
@@ -29,9 +29,9 @@ $(document).keydown(function(event) {
 	$('#wordTwo').append(allGuesses);
 	if (chosenWord.indexOf(userGuess) > -1) {
 		var index = chosenWord.indexOf(userGuess);
-		display[index] = userGuess;
+		currentProgress[index] = userGuess;
 		$('#word').empty();
-		$('#word').append(display);
+		$('#word').append(currentProgress);
 	}
 });
 

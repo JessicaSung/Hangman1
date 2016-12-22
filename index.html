@@ -10,17 +10,34 @@
 </head>
 <body>
 	<div class="container">
-		<!-- Title -->
-		<div class="row"></div>
-
-		<!-- Current user progress -->
+		<!-- header -->
+		<header>
+			<!-- title -->
+			<div class="row">
+				<h1>Welcome to Hangman!</h1>
+			</div>
+		</header>
+		
+		<!-- user score -->
 		<div class="row">
-			<div id="word"></div>				
+			<h5>Wins: 
+				<div id="wins"></div>
+			</h5>
+			<h5>Losses: 				 
+				<div id="losses"></div>
+			</h5>
 		</div>
 
-		<!-- Letters user has guessed -->
+		<!-- current user progress -->
 		<div class="row">
-			<div id="wordTwo"></div>
+			<h3>Guess this word:</h3>
+			<h3><div id="word"></div></h3>				
+		</div>
+
+		<!-- letters user has guessed -->
+		<div class="row">
+			<h3>Letters you've guessed:</h3>
+			<h5><div id="wordTwo"></div></h5>
 		</div>		
 	</div>
 	<!-- jQuery cdn -->
