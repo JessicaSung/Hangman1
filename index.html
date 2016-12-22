@@ -21,10 +21,10 @@
 		<!-- user score -->
 		<div class="row">
 			<h5>Wins: 
-				<div id="wins"></div>
+				<span id="wins">0</span>
 			</h5>
-			<h5>Losses: 				 
-				<div id="losses"></div>
+			<h5>Losses: 
+				<span id="losses">0</span>
 			</h5>
 		</div>
 
@@ -38,7 +38,13 @@
 		<div class="row">
 			<h3>Letters you've guessed:</h3>
 			<h5><div id="wordTwo"></div></h5>
-		</div>		
+		</div>
+
+		<!-- guesses user has left -->
+		<div class="row">
+			<h3>Guesses you have left:</h3>
+			<h5><div id="guessesLeft"></div></h5>
+		</div>
 	</div>
 	<!-- jQuery cdn -->
 	<script   src="http://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
