@@ -7,6 +7,8 @@
 var currentProgress = [];
 var allGuesses = [];
 var guessesRemaining = 0;
+var wins = 0;
+var losses = 0;
 	
 // create array with possible word choices
 var possibleWords = ['coding', 'html', 'running'];
@@ -16,8 +18,13 @@ console.log(chosenWord);
 // tell user how many guesses he has left
 guessesRemaining = chosenWord.length + 10;
 $('#guessesLeft').append(guessesRemaining);
+// show user how many wins he has
+$('#wins').append(wins);
+// show user how many losses he has
+$('#losses').append(losses);
 
-// currentProgress _ equal to the number of letters in the chosen word
+// show user currentProgress (and how many letters are in the chosenWord)
+// currentProgress _ equal to the number of letters in the chosenWord
 for (var i = 0; i < chosenWord.length; i++) {
 	chosenWord[i] = currentProgress.push("_ ");
 }
@@ -29,25 +36,44 @@ $('#currentProgress').append(currentProgress);
 // ===============================================
 $(document).keydown(function(event) {
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-	// check allGuesses array to see if userGuess exists. If not, add it to the array
-	// and display to the user
-	if (allGuesses.indexOf(userGuess) == -1 && chosenWord.indexOf(userGuess) == -1) {
-		allGuesses.push(userGuess);
-		// decrement the number of guesses remaining
-		guessesRemaining -= 1;
-		$('#guessesLeft').empty();
-		$('#guessesLeft').append(guessesRemaining);			
-	}
-	$('#lettersGuessed').empty();
-	$('#lettersGuessed').append(allGuesses);
+
+	// User Guesses Correctly
 	// check if userGuess is in the chosenWord. If so, replace _ with letter.
-	// and display to the user
+	// and display currentProgress to the user
 	if (chosenWord.indexOf(userGuess) > -1) {
 		var chosenWordIndex = chosenWord.indexOf(userGuess);
 		currentProgress[chosenWordIndex] = userGuess;
 		$('#currentProgress').empty();
 		$('#currentProgress').append(currentProgress);
 	}
+
+	// User Guesses Incorrectly
+	// check allGuesses array to see if userGuess exists. If not, add it to the array
+	if (allGuesses.indexOf(userGuess) == -1 && chosenWord.indexOf(userGuess) == -1) {
+		allGuesses.push(userGuess);
+		// decrement the number of guesses remaining
+		// show guessesRemaining to the user
+		guessesRemaining -= 1;
+		$('#guessesLeft').empty();
+		$('#guessesLeft').append(guessesRemaining);			
+	}
+	// show lettersGuessed to the user
+	$('#lettersGuessed').empty();
+	$('#lettersGuessed').append(allGuesses);
+
+	// User Wins
+	// if user has replaced all _ with the correct letter
+	if (currentProgress.indexOf("_ ") == -1) {
+		wins += 1;
+		$('#wins').empty();
+		$('#wins').append(wins);
+		setTimeout(function() { 
+			alert("Congratulations! You've won =)"); 
+		}, 250);
+	}
+
+	// User Loses
+	// if user has run out of guesses
 });
 
     
