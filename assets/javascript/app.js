@@ -24,19 +24,19 @@ for (var i = 0; i < chosenWord.length; i++) {
 }
 // console.log(currentProgress);
 // append _ word to the page
-$('#word').append(currentProgress);
+$('#currentProgress').append(currentProgress);
 
 // log user input
 $(document).keydown(function(event) {
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 	allGuesses.push(userGuess);
-	$('#wordTwo').empty();
-	$('#wordTwo').append(allGuesses);
+	$('#lettersGuessed').empty();
+	$('#lettersGuessed').append(allGuesses);
 	if (chosenWord.indexOf(userGuess) > -1) {
 		var index = chosenWord.indexOf(userGuess);
 		currentProgress[index] = userGuess;
-		$('#word').empty();
-		$('#word').append(currentProgress);
+		$('#currentProgress').empty();
+		$('#currentProgress').append(currentProgress);
 	}
 });
 
