@@ -16,7 +16,6 @@ console.log(chosenWord);
 // tell user how many guesses he has left
 guessesRemaining = chosenWord.length + 10;
 $('#guessesLeft').append(guessesRemaining);
-console.log(guessesRemaining);
 
 // currentProgress _ equal to the number of letters in the chosen word
 for (var i = 0; i < chosenWord.length; i++) {
@@ -26,15 +25,23 @@ for (var i = 0; i < chosenWord.length; i++) {
 // append _ word to the page
 $('#currentProgress').append(currentProgress);
 
-// log user input
+// LOG USER INPUT
+// ===============================================
 $(document).keydown(function(event) {
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-	allGuesses.push(userGuess);
+	// check allGuesses array to see if userGuess exists. If not, add it to the array
+	// and display to the user
+	if (allGuesses.indexOf(userGuess) == -1) {
+			allGuesses.push(userGuess);			
+	}
+	console.log(allGuesses);
 	$('#lettersGuessed').empty();
 	$('#lettersGuessed').append(allGuesses);
+	// check if userGuess is in the chosenWord. If so, replace _ with letter.
+	// and display to the user
 	if (chosenWord.indexOf(userGuess) > -1) {
-		var index = chosenWord.indexOf(userGuess);
-		currentProgress[index] = userGuess;
+		var chosenWordIndex = chosenWord.indexOf(userGuess);
+		currentProgress[chosenWordIndex] = userGuess;
 		$('#currentProgress').empty();
 		$('#currentProgress').append(currentProgress);
 	}
