@@ -31,10 +31,9 @@ $(document).keydown(function(event) {
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 	// check allGuesses array to see if userGuess exists. If not, add it to the array
 	// and display to the user
-	if (allGuesses.indexOf(userGuess) == -1) {
-			allGuesses.push(userGuess);			
+	if (allGuesses.indexOf(userGuess) == -1 && chosenWord.indexOf(userGuess) == -1) {
+		allGuesses.push(userGuess);			
 	}
-	console.log(allGuesses);
 	$('#lettersGuessed').empty();
 	$('#lettersGuessed').append(allGuesses);
 	// check if userGuess is in the chosenWord. If so, replace _ with letter.
