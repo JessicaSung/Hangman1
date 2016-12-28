@@ -32,7 +32,11 @@ $(document).keydown(function(event) {
 	// check allGuesses array to see if userGuess exists. If not, add it to the array
 	// and display to the user
 	if (allGuesses.indexOf(userGuess) == -1 && chosenWord.indexOf(userGuess) == -1) {
-		allGuesses.push(userGuess);			
+		allGuesses.push(userGuess);
+		// decrement the number of guesses remaining
+		guessesRemaining -= 1;
+		$('#guessesLeft').empty();
+		$('#guessesLeft').append(guessesRemaining);			
 	}
 	$('#lettersGuessed').empty();
 	$('#lettersGuessed').append(allGuesses);
