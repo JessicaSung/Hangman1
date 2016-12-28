@@ -31,11 +31,11 @@ function start() {
 	// show user currentProgress (and how many letters are in the chosenWord)
 	// currentProgress _ equal to the number of letters in the chosenWord
 	for (var i = 0; i < chosenWord.length; i++) {
-		chosenWord[i] = currentProgress.push("_ ");
+		chosenWord[i] = currentProgress.push("_");
 	}
 	// append _ word to the page
 	$('#currentProgress').empty();
-	$('#currentProgress').append(currentProgress);
+	$('#currentProgress').append(currentProgress.join(" "));
 }
 
 // LOG USER INPUT
@@ -50,7 +50,7 @@ $(document).keydown(function(event) {
 		var chosenWordIndex = chosenWord.indexOf(userGuess);
 		currentProgress[chosenWordIndex] = userGuess;
 		$('#currentProgress').empty();
-		$('#currentProgress').append(currentProgress);
+		$('#currentProgress').append(currentProgress.join(" "));
 	}
 
 	// User Guesses Incorrectly
@@ -70,16 +70,16 @@ $(document).keydown(function(event) {
 	// User Wins
 	// if user has replaced all _ with the correct letter
 	// increment the number of wins and ask user to play again
-	if (currentProgress.indexOf("_ ") == -1) {
+	if (currentProgress.indexOf("_") == -1) {
 		wins += 1;
 		$('#wins').empty();
 		$('#wins').append(wins);
 		setTimeout(function() { 
 			var again = confirm("Congratulations! You won.\n\nPlay again?");
 			if (again == true) {
-				var currentProgress = [];
-				var allGuesses = [];
-				var guessesRemaining = 0;
+				currentProgress = [];
+				allGuesses = [];
+				guessesRemaining = 0;
 				$('#currentProgress').empty();
 				$('#guessesLeft').empty();
 				$('#lettersGuessed').empty();
