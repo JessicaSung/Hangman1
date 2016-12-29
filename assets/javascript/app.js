@@ -64,11 +64,19 @@ $(document).keydown(function(event) {
 		// User Guesses Correctly
 		// check if userGuess is in the chosenWord. If so, replace _ with letter.
 		// and display currentProgress to the user
-		if (chosenWord.indexOf(userGuess) > -1) {
-			var chosenWordIndex = chosenWord.indexOf(userGuess);
-			currentProgress[chosenWordIndex] = userGuess;
-			$('#currentProgress').empty();
-			$('#currentProgress').append(currentProgress.join(" "));
+		// if (chosenWord.indexOf(userGuess) > -1) {
+		// 	var chosenWordIndex = chosenWord.indexOf(userGuess);
+		// 	currentProgress[chosenWordIndex] = userGuess;
+		// 	$('#currentProgress').empty();
+		// 	$('#currentProgress').append(currentProgress.join(" "));
+		// }
+
+		for (var i = 0; i < chosenWord.length; i++) {			
+			if (chosenWord.charAt(i) == userGuess) {
+				currentProgress[i] = userGuess;
+				$('#currentProgress').empty();
+				$('#currentProgress').append(currentProgress.join(" "));
+			}
 		}
 
 		// User Guesses Incorrectly
