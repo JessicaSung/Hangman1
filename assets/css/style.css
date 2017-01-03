@@ -1,9 +1,13 @@
 body {
-	background-image: url("../images/hangman.png");
+	/*background-image: url("../images/purple-sword.png");
 	background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 55% 90%;
-    background-position: right bottom;
-    background-color: #79BEDB;
-    color: #593E1A;
+    background-attachment: fixed;    
+    background-position: right bottom;*/
+    /*background-size: 55% 90%;*/
+    background-color: #5D49A6;
+    color: #CACCFF;
+}
+
+h1 {
+	font-family: 'Frijole', cursive;
 }
