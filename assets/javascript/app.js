@@ -60,17 +60,6 @@ $(document).keydown(function(event) {
 	if (!userGuess.match(letter)) {
 		alert('Please input letters only.')
 	}else{	
-
-		// User Guesses Correctly
-		// check if userGuess is in the chosenWord. If so, replace _ with letter.
-		// and display currentProgress to the user
-		// if (chosenWord.indexOf(userGuess) > -1) {
-		// 	var chosenWordIndex = chosenWord.indexOf(userGuess);
-		// 	currentProgress[chosenWordIndex] = userGuess;
-		// 	$('#currentProgress').empty();
-		// 	$('#currentProgress').append(currentProgress.join(" "));
-		// }
-
 		for (var i = 0; i < chosenWord.length; i++) {			
 			if (chosenWord.charAt(i) == userGuess) {
 				currentProgress[i] = userGuess;
