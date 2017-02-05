@@ -80,7 +80,7 @@ $(document).keydown(function(event) {
 		}
 		// show lettersGuessed to the user
 		$('#lettersGuessed').empty();
-		$('#lettersGuessed').append(allGuesses);
+		$('#lettersGuessed').append(allGuesses.join(", "));
 
 		// User Wins
 		// if user has replaced all _ with the correct letter
