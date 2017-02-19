@@ -18,12 +18,9 @@ Please input letters only.
 ![Letters Only](https://cloud.githubusercontent.com/assets/18690072/23037718/0fab4b20-f44d-11e6-9681-1d6df70ba487.PNG)
 
 ### Technologies used:
-* HTML
-* CSS
-* Bootstrap
 * JavaScript
 * jQuery
+* Bootstrap
+* HTML5
+* CSS3
 * Google Fonts
-* Git
-* Github
-* Sublime Text 3
