@@ -13,7 +13,7 @@ var losses = 0;
 
 function start() {	
 	// create array with possible word choices
-	var possibleWords = ['seax', 'warseax', 'shortseax', 'zweihander', 'claymore', 'flamberge', 'falchion', 'scimitar', 'katana', 'wakizashi', 'nodachi', 'longseax', 'rapier', 'sabre', 'foil', 'nikana', 'broadseax', 'cutlass', 'messer', 'kukri', 'kris', 'scimitar', 'dao', 'jian', 'hwandudaedo', 'tachi', 'tsurugi', 'katzbalger', 'machete', 'kirpan', 'khanda', 'khopesh'];
+	var possibleWords = ['seax', 'warseax', 'shortseax', 'zweihander', 'claymore', 'flamberge', 'falchion', 'scimitar', 'katana', 'wakizashi', 'nodachi', 'longseax', 'rapier', 'sabre', 'foil', 'nikana', 'broadseax', 'cutlass', 'messer', 'kukri', 'kris', 'scimitar', 'dao', 'jian', 'hwandudaedo', 'tachi', 'tsurugi', 'katzbalger', 'machete', 'kirpan', 'khanda', 'khopesh', 'falcata', 'butterfly'];
 	// choose a word at random
 	chosenWord = possibleWords[Math.floor(Math.random()*possibleWords.length)];
 	console.log(chosenWord);
